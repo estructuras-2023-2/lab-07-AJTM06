@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-
+#include <algorithm> 
 using namespace std;
 
 //Metodo llamado Torneo 
@@ -22,16 +21,14 @@ vector<int> Torneo (vector<int> habilidades, int N, int K){
     //perdedor = min(habilidades[0], habilidades[1]);
     /*El juego empieza en 1 y este lo juegan los de habilidades[0] 
     habilidades[1] que en este caso serian gandor y perdedor*/
-     for (int juego = 1; juego < K; juego++) {
-         /*Se determinar un ganador(si gano N juegos seguidos)
-         y el otro seria el perdedor*/
-       if (j_ganados >= N) {
+     for (int juego = 1; juego <= K; juego++) {
+        if (j_ganados >= N) {
             swap(ganador, perdedor);
             j_ganados = 0;
         }
 
         if (juego == K) {
-            resultado = {perdedor, ganador};
+            resultado = {ganador, perdedor};
             return resultado;
         }
 
